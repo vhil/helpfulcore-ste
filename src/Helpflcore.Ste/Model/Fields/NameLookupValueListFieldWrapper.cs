@@ -31,8 +31,7 @@
 
             foreach (string key in nvc.Keys)
             {
-                Guid value;
-                if (Guid.TryParse(nvc[key], out value))
+	            if (Guid.TryParse(nvc[key], out var value))
                 {
                     this.Value.Add(key, value);
                 }

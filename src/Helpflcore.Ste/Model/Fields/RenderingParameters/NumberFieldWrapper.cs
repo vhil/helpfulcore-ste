@@ -1,17 +1,18 @@
 ﻿namespace Helpflcore.Ste.Model.Fields.RenderingParameters
 {
     using Abstractions;
+    using System.Globalization;
 
-    public class NumberFieldWrapper : RenderingParametersFieldWrapper, INumberFieldWrapper
+	public class NumberFieldWrapper : RenderingParametersFieldWrapper, INumberFieldWrapper
     {
-        private float? value;
+        private decimal? value;
 
         public NumberFieldWrapper(string fieldName, string value)
             : base(fieldName, value)
         {
         }
 
-        public float Value
+        public decimal Value
         {
             get
             {
@@ -32,10 +33,8 @@
         private void InitializeValue()
         {
             if (!this.value.HasValue)
-            {
-                float parsedValue;
-
-                if (float.TryParse(this.RawValue, out parsedValue))
+			{ 
+                if (decimal.TryParse(this.RawValue, NumberStyles.Any, CultureInfo.InvariantCulture, out var parsedValue))
                 {
                     this.value = parsedValue;
                 }

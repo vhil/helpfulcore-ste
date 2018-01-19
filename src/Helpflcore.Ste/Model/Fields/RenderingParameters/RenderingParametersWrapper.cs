@@ -11,9 +11,7 @@
 
         public RenderingParametersWrapper(RenderingParameters parameters)
         {
-            if (parameters == null) throw new ArgumentNullException(nameof(parameters));
-
-            this.parameters = parameters;
+	        this.parameters = parameters ?? throw new ArgumentNullException(nameof(parameters));
         }
 
         public TField GetStronglyTypedField<TField>(string fieldName) where TField : class, IRenderingParametersFieldWrapper

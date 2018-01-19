@@ -17,9 +17,7 @@
 
         public FieldWrapper(Field originalField)
         {
-            if (originalField == null) throw new ArgumentNullException(nameof(originalField));
-
-            this.Original = originalField;
+	        this.Original = originalField ?? throw new ArgumentNullException(nameof(originalField));
         }
 
         public FieldWrapper(BaseItem item, string fieldName) 

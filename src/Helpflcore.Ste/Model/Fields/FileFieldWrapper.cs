@@ -1,12 +1,11 @@
-﻿using System;
-
-namespace Helpflcore.Ste.Model.Fields
+﻿namespace Helpflcore.Ste.Model.Fields
 {
 	using System.Web;
 	using Abstractions;
 	using Sitecore.Data.Fields;
 	using Sitecore.Data.Items;
 	using Sitecore.Resources.Media;
+	using System;
 
 	public class FileFieldWrapper : FieldWrapper, IFileFieldWrapper
 	{

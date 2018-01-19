@@ -19,7 +19,7 @@
         {
         }
 
-        public DateTime Value => ((DateField) this.OriginalField).DateTime;
+        public DateTime Value => ((DateField) this.OriginalField).DateTime.ToLocalTime();
 
         public IHtmlString Render(bool includeTime)
         {

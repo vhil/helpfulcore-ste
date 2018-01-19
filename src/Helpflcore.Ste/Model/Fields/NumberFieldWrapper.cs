@@ -3,10 +3,11 @@
     using Abstractions;
     using Sitecore.Data.Fields;
     using Sitecore.Data.Items;
+    using System.Globalization;
 
-    public class NumberFieldWrapper : FieldWrapper, INumberFieldWrapper
+	public class NumberFieldWrapper : FieldWrapper, INumberFieldWrapper
     {
-        private float? value;
+        private decimal? value;
 
         public NumberFieldWrapper(Field originalField) 
             : base(originalField)
@@ -27,7 +28,7 @@
             }
         }
 
-        public float Value
+        public decimal Value
         {
             get
             {
@@ -40,9 +41,7 @@
         {
             if (!this.value.HasValue)
             {
-                float parsedValue;
-
-                if (float.TryParse(this.RawValue, out parsedValue))
+	            if (decimal.TryParse(this.RawValue, NumberStyles.Any, CultureInfo.InvariantCulture, out var parsedValue))
                 {
                     this.value = parsedValue;
                 }
