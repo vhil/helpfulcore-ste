@@ -1,4 +1,4 @@
-﻿namespace Helpflcore.Ste.Model.Fields
+﻿namespace Helpfulcore.Ste.Model.Fields
 {
     using System.Collections.Specialized;
     using Abstractions;

@@ -1,4 +1,4 @@
-﻿namespace Helpflcore.Ste.Helpers
+﻿namespace Helpfulcore.Ste.Helpers
 {
 	using Sitecore.Collections;
 	using Extensions;

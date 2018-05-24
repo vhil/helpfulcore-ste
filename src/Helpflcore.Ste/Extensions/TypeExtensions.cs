@@ -1,9 +1,9 @@
-﻿namespace Helpflcore.Ste.Extensions
+﻿namespace Helpfulcore.Ste.Extensions
 {
 	using System;
 	using System.Reflection;
 
-	internal static class TypeExtensions
+	public static class TypeExtensions
     {
         public static object GetValue(this MemberInfo member, object instance)
         {

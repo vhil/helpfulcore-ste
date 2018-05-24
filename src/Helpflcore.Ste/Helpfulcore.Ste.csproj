@@ -7,8 +7,8 @@
     <ProjectGuid>{D3087697-BF28-4B4E-BB75-47B3548DAF5C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Helpflcore.Ste</RootNamespace>
-    <AssemblyName>Helpflcore.Ste</AssemblyName>
+    <RootNamespace>Helpfulcore.Ste</RootNamespace>
+    <AssemblyName>Helpfulcore.Ste</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -85,7 +85,7 @@
     <Compile Include="Model\Fields\Abstractions\IRenderingParametersFieldWrapper.cs" />
     <Compile Include="Model\Fields\Abstractions\IRichTextFieldWrapper.cs" />
     <Compile Include="Model\Fields\Abstractions\ITextFieldWrapper.cs" />
-    <Compile Include="Model\Fields\BooleanFieldWrapper.cs" />
+    <Compile Include="Model\Fields\CheckboxFieldWrapper.cs" />
     <Compile Include="Model\Fields\DateTimeFieldWrapper.cs" />
     <Compile Include="Model\Fields\FieldWrapper.cs" />
     <Compile Include="Model\Fields\FileFieldWrapper.cs" />
@@ -109,6 +109,8 @@
     <Compile Include="Model\Fields\RichTextFieldWrapper.cs" />
     <Compile Include="Model\Fields\TextFieldWrapper.cs" />
     <Compile Include="IStronglyTypedFieldFactory.cs" />
+    <Compile Include="Pipelines\WrapFieldArgs.cs" />
+    <Compile Include="Pipelines\WrapFieldProcessor.cs" />
     <Compile Include="StronglyTypedFieldFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

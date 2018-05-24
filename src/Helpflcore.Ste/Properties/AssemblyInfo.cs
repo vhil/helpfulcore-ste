@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Helpflcore.Ste")]
+[assembly: AssemblyTitle("Helpfulcore.Ste")]
 [assembly: AssemblyDescription("Srongly-typed extensions for field access in Sitecore CMS")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Helpflcore.Ste")]
+[assembly: AssemblyProduct("Helpfulcore.Ste")]
 [assembly: AssemblyCopyright("Copyright © Volodymyr Hil 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

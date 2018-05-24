@@ -1,11 +1,11 @@
-﻿namespace Helpflcore.Ste.Extensions
+﻿namespace Helpfulcore.Ste.Extensions
 {
     using Model.Fields.Abstractions;
     using Sitecore.Data.Fields;
 
     public static class FieldExtensions
     {
-        private static IStronglyTypedFieldFactory FieldFactory => StronglyTypedFieldFactory.FromConfiguration();
+        private static IStronglyTypedFieldFactory FieldFactory => StronglyTypedFieldFactory.Instance();
 
         public static TField AsStronglyTypedField<TField>(this Field field) where TField : IFieldWrapper
         {

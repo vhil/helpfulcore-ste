@@ -1,4 +1,4 @@
-﻿namespace Helpflcore.Ste.Configuration
+﻿namespace Helpfulcore.Ste.Configuration
 {
 	using Microsoft.Extensions.DependencyInjection;
 	using Sitecore.DependencyInjection;
@@ -8,7 +8,7 @@
 	{
 		public void Configure(IServiceCollection serviceCollection)
 		{
-			serviceCollection.AddSingleton(typeof(IStronglyTypedFieldFactory), provider => StronglyTypedFieldFactory.FromConfiguration());
+			serviceCollection.AddSingleton(typeof(IStronglyTypedFieldFactory), provider => StronglyTypedFieldFactory.Instance());
 		}
 	}
 }

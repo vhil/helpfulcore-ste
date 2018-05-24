@@ -1,4 +1,4 @@
-﻿namespace Helpflcore.Ste.Model.Fields.RenderingParameters
+﻿namespace Helpfulcore.Ste.Model.Fields.RenderingParameters
 {
     using Abstractions;
     using System.Globalization;

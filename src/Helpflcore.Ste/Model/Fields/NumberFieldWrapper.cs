@@ -1,4 +1,4 @@
-﻿namespace Helpflcore.Ste.Model.Fields
+﻿namespace Helpfulcore.Ste.Model.Fields
 {
     using Abstractions;
     using Sitecore.Data.Fields;

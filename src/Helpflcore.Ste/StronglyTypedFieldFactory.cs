@@ -1,4 +1,4 @@
-﻿namespace Helpflcore.Ste
+﻿namespace Helpfulcore.Ste
 {
 	using System;
 	using System.Data;
@@ -8,10 +8,13 @@
 	using Sitecore.Data.Items;
 	using Extensions;
 	using Sitecore.Configuration;
+	using Pipelines;
+	using Sitecore.Data;
+	using Sitecore.Pipelines;
 
 	public class StronglyTypedFieldFactory : IStronglyTypedFieldFactory
     {
-	    public static IStronglyTypedFieldFactory FromConfiguration()
+	    public static IStronglyTypedFieldFactory Instance()
 	    {
 		    return Factory.CreateObject("helpfulcore/stronglyTypedFieldFactory", true) as IStronglyTypedFieldFactory;
 	    }
@@ -20,53 +23,12 @@
         {
             if (field == null) throw new ArgumentNullException(nameof(field));
 
-            var typeName = field.Type.Trim().ToLower();
-
             try
             {
-                switch (typeName.ToLower())
-                {
-                    case "checkbox":
-                        return new BooleanFieldWrapper(field);
-                    case "image":
-                        return new ImageFieldWrapper(field);
-                    case "file":
-                        return new FileFieldWrapper(field);
-                    case "date":
-                    case "datetime":
-                        return new DateTimeFieldWrapper(field);
-                    case "checklist":
-                    case "treelist":
-                    case "treelist with search":
-                    case "treelistex":
-                    case "multilist":
-                    case "multilist with search":
-                    case "accounts multilist":
-                    case "tags":
-                        return new ListFieldWrapper(field);
-                    case "droplink":
-                    case "droptree":
-                        return new LinkFieldWrapper(field);
-                    case "general link":
-                    case "general link with search":
-                        return new GeneralLinkFieldWrapper(field);
-                    case "text":
-                    case "single-line text":
-                    case "multi-line text":
-                        return new TextFieldWrapper(field);
-                    case "rich text":
-                        return new RichTextFieldWrapper(field);
-                    case "number":
-                        return new NumberFieldWrapper(field);
-                    case "integer":
-                        return new IntegerFieldWrapper(field);
-                    case "name lookup value list":
-                        return new NameLookupValueListFieldWrapper(field);
-					case "name value list":
-                        return new NameValueListFieldWrapper(field);
-                    default:
-                        return new TextFieldWrapper(field);
-                }
+	            var wrapFieldAgrs = new WrapFieldArgs(field);
+	            CorePipeline.Run("ste.wrapField", wrapFieldAgrs);
+
+				return wrapFieldAgrs.FieldWrapper ?? new TextFieldWrapper(field);
             }
             catch (Exception ex)
             {
@@ -87,17 +49,7 @@
 
         public IFieldWrapper GetStronglyTypedField(Item item, string fieldName)
         {
-            if (item == null) throw new ArgumentNullException(nameof(item));
-            if (string.IsNullOrEmpty(fieldName)) throw new ArgumentNullException(nameof(fieldName));
-
-            var field = item.Fields[fieldName.ToLower()];
-
-            if (field == null)
-            {
-                throw new StrongTypingException($"Field with name '{fieldName}' can't be retrieved from item '{item.Paths.FullPath}' with ID {item.ID}.");
-            }
-
-            return this.GetStronglyTypedField(item.Fields[fieldName.ToLower()]);
+	        return this.GetStronglyTypedField<IFieldWrapper>(item, fieldName);
         }
 
         public TField GetStronglyTypedField<TField>(Item item, string fieldName) where TField : IFieldWrapper
@@ -114,5 +66,26 @@
 
             return this.GetStronglyTypedField<TField>(field);
         }
+
+	    public IFieldWrapper GetStronglyTypedField(Item item, ID fieldId)
+	    {
+			return this.GetStronglyTypedField<IFieldWrapper>(item, fieldId);
+
+		}
+
+		public TField GetStronglyTypedField<TField>(Item item, ID fieldId) where TField : IFieldWrapper
+	    {
+			if (item == null) throw new ArgumentNullException(nameof(item));
+		    if (ID.IsNullOrEmpty(fieldId)) throw new ArgumentNullException(nameof(fieldId));
+
+		    var field = item.Fields[fieldId];
+
+		    if (field == null)
+		    {
+			    throw new StrongTypingException($"Field with ID '{fieldId}' can't be retrieved from item '{item.Paths.FullPath}' with ID {item.ID}.");
+		    }
+
+		    return this.GetStronglyTypedField<TField>(field);
+		}
     }
 }

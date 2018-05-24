@@ -1,4 +1,4 @@
-﻿namespace Helpflcore.Ste.Model.Fields.RenderingParameters
+﻿namespace Helpfulcore.Ste.Model.Fields.RenderingParameters
 {
     using System;
     using System.Web;

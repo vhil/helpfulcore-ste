@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Helpflcore.Ste.Model.Fields.Abstractions
+namespace Helpfulcore.Ste.Model.Fields.Abstractions
 {
     public interface IGeneralLinkFieldWrapper : ILinkFieldWrapper<string>
     {
