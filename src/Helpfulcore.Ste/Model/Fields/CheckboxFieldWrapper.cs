@@ -5,7 +5,7 @@
     using Sitecore.Data.Fields;
     using Sitecore.Data.Items;
 
-    public class CheckboxFieldWrapper : FieldWrapper, IBooleanFieldWrapper
+    public class CheckboxFieldWrapper : FieldWrapper, ICheckboxFieldWrapper
     {
         public CheckboxFieldWrapper(Field originalField) 
             : base(originalField)

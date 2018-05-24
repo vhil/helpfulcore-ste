@@ -19,14 +19,9 @@
 
 		public override IHtmlString Render(string parameters = null, bool editing = true)
 		{
-			var returnValue = string.Empty;
+			var url = "/" + MediaManager.GetMediaUrl(this.MediaItem).TrimStart('/');
 
-			if (this.MediaItem != null)
-			{
-				returnValue = "/" + MediaManager.GetMediaUrl(this.MediaItem);
-			}
-
-			return new HtmlString(returnValue);
+			return new HtmlString(url);
 		}
 
 		public string DownloadUrl

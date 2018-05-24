@@ -8,7 +8,6 @@
 	{
 		public void Configure(IServiceCollection serviceCollection)
 		{
-			serviceCollection.AddSingleton(typeof(IStronglyTypedFieldFactory), provider => StronglyTypedFieldFactory.Instance());
 		}
 	}
 }

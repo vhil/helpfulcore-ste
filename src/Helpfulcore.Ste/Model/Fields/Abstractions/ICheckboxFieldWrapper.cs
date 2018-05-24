@@ -1,6 +1,6 @@
 ﻿namespace Helpfulcore.Ste.Model.Fields.Abstractions
 {
-    public interface IBooleanFieldWrapper : IFieldWrapper<bool>
+    public interface ICheckboxFieldWrapper : IFieldWrapper<bool>
     {
     }
 }

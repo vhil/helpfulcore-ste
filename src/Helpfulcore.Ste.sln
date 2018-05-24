@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpfulcore.Ste", "Helpflcore.Ste\Helpfulcore.Ste.csproj", "{D3087697-BF28-4B4E-BB75-47B3548DAF5C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpfulcore.Ste", "Helpfulcore.Ste\Helpfulcore.Ste.csproj", "{D3087697-BF28-4B4E-BB75-47B3548DAF5C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configuration", "{C9A91D76-4DC3-4DA8-9F7B-AC0DE5960E1C}"
 	ProjectSection(SolutionItems) = preProject

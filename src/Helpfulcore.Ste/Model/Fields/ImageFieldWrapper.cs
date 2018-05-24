@@ -35,9 +35,16 @@
 
             var mediaItem = this.ImageField.MediaItem;
 
-            return mediaItem == null 
+            var url = mediaItem == null 
                 ? string.Empty 
                 : MediaManager.GetMediaUrl(mediaItem, new MediaUrlOptions { AbsolutePath = absolute });
+
+	        if (!absolute && !string.IsNullOrWhiteSpace(url))
+	        {
+		        url = "/" + url.TrimStart('/');
+	        }
+
+	        return url;
         }
         
         public Item GetTarget()

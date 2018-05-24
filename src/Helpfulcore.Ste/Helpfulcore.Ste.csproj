@@ -70,7 +70,7 @@
     <Compile Include="Extensions\FieldExtensions.cs" />
     <Compile Include="Extensions\TypeExtensions.cs" />
     <Compile Include="Helpers\TypeHelper.cs" />
-    <Compile Include="Model\Fields\Abstractions\IBooleanFieldWrapper.cs" />
+    <Compile Include="Model\Fields\Abstractions\ICheckboxFieldWrapper.cs" />
     <Compile Include="Model\Fields\Abstractions\IDateTimeFieldWrapper.cs" />
     <Compile Include="Model\Fields\Abstractions\IFieldWrapper.cs" />
     <Compile Include="Model\Fields\Abstractions\IFileFieldWrapper.cs" />
@@ -97,7 +97,7 @@
     <Compile Include="Model\Fields\NameLookupValueListFieldWrapper.cs" />
     <Compile Include="Model\Fields\NameValueListFieldWrapper.cs" />
     <Compile Include="Model\Fields\NumberFieldWrapper.cs" />
-    <Compile Include="Model\Fields\RenderingParameters\BooleanFieldWrapper.cs" />
+    <Compile Include="Model\Fields\RenderingParameters\CheckboxFieldWrapper.cs" />
     <Compile Include="Model\Fields\RenderingParameters\IntegerFieldWrapper.cs" />
     <Compile Include="Model\Fields\RenderingParameters\IRenderingParametersWrapper.cs" />
     <Compile Include="Model\Fields\RenderingParameters\LinkFieldWrapper.cs" />

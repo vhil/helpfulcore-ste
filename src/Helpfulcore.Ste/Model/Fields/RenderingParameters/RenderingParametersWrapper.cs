@@ -20,7 +20,7 @@
 				? string.Empty 
 				: this.parameters[fieldName];
 
-			if (typeof(TField).IsAssignableTo(typeof(IBooleanFieldWrapper))) return new BooleanFieldWrapper(fieldName, rawValue) as TField;
+			if (typeof(TField).IsAssignableTo(typeof(ICheckboxFieldWrapper))) return new CheckboxFieldWrapper(fieldName, rawValue) as TField;
             if (typeof(TField).IsAssignableTo(typeof(IIntegerFieldWrapper))) return new IntegerFieldWrapper(fieldName, rawValue) as TField;
             if (typeof(TField).IsAssignableTo(typeof(ILinkFieldWrapper))) return new LinkFieldWrapper(fieldName, rawValue) as TField;
             if (typeof(TField).IsAssignableTo(typeof(IListFieldWrapper))) return new ListFieldWrapper(fieldName, rawValue) as TField;
@@ -30,9 +30,9 @@
             return new RenderingParametersFieldWrapper(fieldName, rawValue) as TField;
         }
 
-        public IBooleanFieldWrapper CheckboxField(string fieldName)
+        public ICheckboxFieldWrapper CheckboxField(string fieldName)
         {
-            return this.GetStronglyTypedField<BooleanFieldWrapper>(fieldName);
+            return this.GetStronglyTypedField<CheckboxFieldWrapper>(fieldName);
         }
 
         public IIntegerFieldWrapper IntegerField(string fieldName)

@@ -30,9 +30,9 @@
             return FieldFactory.GetStronglyTypedField<INumberFieldWrapper>(item, fieldName);
         }
 
-        public static IBooleanFieldWrapper CheckboxField(this Item item, string fieldName)
+        public static ICheckboxFieldWrapper CheckboxField(this Item item, string fieldName)
         {
-            return FieldFactory.GetStronglyTypedField<IBooleanFieldWrapper>(item, fieldName);
+            return FieldFactory.GetStronglyTypedField<ICheckboxFieldWrapper>(item, fieldName);
         }
 
         public static IFileFieldWrapper FileField(this Item item, string fieldName)
@@ -104,9 +104,9 @@
 			return FieldFactory.GetStronglyTypedField<INumberFieldWrapper>(item, fieldId);
 		}
 
-		public static IBooleanFieldWrapper CheckboxField(this Item item, ID fieldId)
+		public static ICheckboxFieldWrapper CheckboxField(this Item item, ID fieldId)
 		{
-			return FieldFactory.GetStronglyTypedField<IBooleanFieldWrapper>(item, fieldId);
+			return FieldFactory.GetStronglyTypedField<ICheckboxFieldWrapper>(item, fieldId);
 		}
 
 		public static IFileFieldWrapper FileField(this Item item, ID fieldId)

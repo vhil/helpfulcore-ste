@@ -27,9 +27,9 @@
             return FieldFactory.GetStronglyTypedField<INumberFieldWrapper>(field);
         }
 
-        public static IBooleanFieldWrapper AsCheckboxField(this Field field)
+        public static ICheckboxFieldWrapper AsCheckboxField(this Field field)
         {
-            return FieldFactory.GetStronglyTypedField<IBooleanFieldWrapper>(field);
+            return FieldFactory.GetStronglyTypedField<ICheckboxFieldWrapper>(field);
         }
 
         public static IFileFieldWrapper AsFileField(this Field field)

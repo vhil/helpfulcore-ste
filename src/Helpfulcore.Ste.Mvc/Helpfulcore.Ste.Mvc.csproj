@@ -89,7 +89,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Helpflcore.Ste\Helpfulcore.Ste.csproj">
+    <ProjectReference Include="..\Helpfulcore.Ste\Helpfulcore.Ste.csproj">
       <Project>{d3087697-bf28-4b4e-bb75-47b3548daf5c}</Project>
       <Name>Helpfulcore.Ste</Name>
     </ProjectReference>
