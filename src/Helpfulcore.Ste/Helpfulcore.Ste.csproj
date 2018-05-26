@@ -65,11 +65,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuration\ServicesConfigurator.cs" />
+    <Compile Include="Extensions\CachingExtensions.cs" />
+    <Compile Include="Caching\ICacheService.cs" />
+    <Compile Include="Caching\ICacheStorage.cs" />
+    <Compile Include="Caching\SitecoreCacheService.cs" />
+    <Compile Include="Caching\SitecoreCacheStorage.cs" />
+    <Compile Include="Caching\SitecoreMemoryCacheEntry.cs" />
+    <Compile Include="Exceptions\FieldWrappingException.cs" />
     <Compile Include="Extensions\ItemExtensions.cs" />
     <Compile Include="Extensions\FieldExtensions.cs" />
     <Compile Include="Extensions\TypeExtensions.cs" />
     <Compile Include="Helpers\TypeHelper.cs" />
+    <Compile Include="IFieldWrapperFactory.cs" />
     <Compile Include="Model\Fields\Abstractions\ICheckboxFieldWrapper.cs" />
     <Compile Include="Model\Fields\Abstractions\IDateTimeFieldWrapper.cs" />
     <Compile Include="Model\Fields\Abstractions\IFieldWrapper.cs" />
@@ -108,10 +115,9 @@
     <Compile Include="Model\Fields\RenderingParameters\TextFieldWrapper.cs" />
     <Compile Include="Model\Fields\RichTextFieldWrapper.cs" />
     <Compile Include="Model\Fields\TextFieldWrapper.cs" />
-    <Compile Include="IStronglyTypedFieldFactory.cs" />
     <Compile Include="Pipelines\WrapFieldArgs.cs" />
     <Compile Include="Pipelines\WrapFieldProcessor.cs" />
-    <Compile Include="StronglyTypedFieldFactory.cs" />
+    <Compile Include="FieldWrapperFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -121,6 +127,7 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

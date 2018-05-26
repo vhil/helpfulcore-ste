@@ -1,6 +1,6 @@
 ﻿namespace Helpfulcore.Ste.Mvc
 {
-	using Helpfulcore.Ste.Model.Fields.RenderingParameters;
+	using Model.Fields.RenderingParameters;
 	using Sitecore.Data.Items;
 
 	public interface IViewModel

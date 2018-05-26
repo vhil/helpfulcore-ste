@@ -5,7 +5,7 @@
 	using Model.Fields.Abstractions;
 	using Sitecore.Diagnostics;
 	using System;
-	using System.Data;
+	using Exceptions;
 
 	public class WrapFieldProcessor
 	{
@@ -31,7 +31,7 @@
 
 				if (type == null)
 				{
-					throw new StrongTypingException($"Configured field wrapper type '{this.fieldWrapperType}' " +
+					throw new FieldWrappingException($"Configured field wrapper type '{this.fieldWrapperType}' " +
 					                                $"can not be found. Please check configuration.");
 				}
 
@@ -39,7 +39,7 @@
 
 				if (fieldWrapper == null)
 				{
-					throw new StrongTypingException($"Configured field wrapper type '{this.fieldWrapperType}' " +
+					throw new FieldWrappingException($"Configured field wrapper type '{this.fieldWrapperType}' " +
 					                                $"can not be instantiated.");
 				}
 
